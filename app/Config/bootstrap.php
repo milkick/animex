@@ -40,7 +40,10 @@ Cache::config('default', array('engine' => 'File'));
  *     'Plugin'                    => array('/path/to/plugins/', '/next/path/to/plugins/'),
  * ));
  */
-
+ App::build(array(
+     'Vendor' => array(ROOT . DS . 'Vendor' . DS, ),
+     'Plugin' => array(ROOT . DS . 'Plugin' . DS, )
+     ));
 /**
  * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other
  * string is passed to the inflection functions
@@ -57,6 +60,9 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::loadAll(); // Loads all plugins at once
  * CakePlugin::load('DebugKit'); // Loads a single plugin named DebugKit
  */
+CakePlugin::load('DebugKit');  
+CakePlugin::load('Search');  
+CakePlugin::load('BoostCake');
 
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter . By default CakePHP bundles two filters:

@@ -1,0 +1,65 @@
+2016-12-05 17:12:52 Error: [MissingActionException] Action AppController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'index',
+)
+Request URL: /animex/app/
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-12-05 21:54:00 Error: [MissingActionException] Action AppController::users() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'users',
+)
+Request URL: /animex/app/users/index
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(AppController), Object(CakeRequest))
+#2 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-12-05 22:05:38 Error: [MissingPluginException] Plugin DebugKit could not be found.
+Exception Attributes: array (
+  'plugin' => 'DebugKit',
+)
+Request URL: /animex/
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(227): CakePlugin::path('DebugKit')
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(549): App::path('Controller/Comp...', 'DebugKit')
+#2 [internal function]: App::load('ToolbarComponen...')
+#3 [internal function]: spl_autoload_call('ToolbarComponen...')
+#4 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\ComponentCollection.php(110): class_exists('ToolbarComponen...')
+#5 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\ComponentCollection.php(53): ComponentCollection->load('DebugKit.Toolba...', Array)
+#6 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(644): ComponentCollection->init(Object(PagesController))
+#7 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(188): Controller->constructClasses()
+#8 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest))
+#9 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2016-12-05 22:05:44 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /animex/login
+Stack Trace:
+#0 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-05 22:06:01 Error: [MissingPluginException] Plugin DebugKit could not be found.
+Exception Attributes: array (
+  'plugin' => 'DebugKit',
+)
+Request URL: /animex/users/login
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(227): CakePlugin::path('DebugKit')
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(549): App::path('Controller/Comp...', 'DebugKit')
+#2 [internal function]: App::load('ToolbarComponen...')
+#3 [internal function]: spl_autoload_call('ToolbarComponen...')
+#4 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\ComponentCollection.php(110): class_exists('ToolbarComponen...')
+#5 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\ComponentCollection.php(53): ComponentCollection->load('DebugKit.Toolba...', Array)
+#6 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(644): ComponentCollection->init(Object(UsersController))
+#7 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(188): Controller->constructClasses()
+#8 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
