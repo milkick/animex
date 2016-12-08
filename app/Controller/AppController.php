@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Application level Controller
  *
@@ -9,8 +10,8 @@
  * @package       app.Controller
  * @since         CakePHP(tm) v 0.2.9
  */
-
 App::uses('Controller', 'Controller');
+App::uses('AuthComponent', 'Controller/Component');
 
 /**
  * Application Controller
@@ -22,29 +23,32 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
- 
-  public $components = array(  
-    'Session',  
-    'Cookie',  
-    'DebugKit.Toolbar',  
-    'Auth' => array(  
-      'flash' => array(  
-        'element' => 'alert',  
-        'key' => 'auth',  
-        'params' => array(  
-          'plugin' => 'BoostCake',  
-          'class' => 'alert-error'  
-        ),  
-      ),  
-    ),  
-  );  
-  
-  public $helpers = array(  
-    'Session',  
-    'Html' => array('className' => 'BoostCake.BoostCakeHtml'),  
-    'Form' => array('className' => 'BoostCake.BoostCakeForm'),  
-    'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),  
-  );  
-  
-  public $layout = 'bootstrap';
+
+    public $components = array(
+        'Session',
+        'Cookie',
+        'DebugKit.Toolbar',
+        'Auth' => array(
+            'flash' => array(
+                'element' => 'alert',
+                'key' => 'auth',
+                'params' => array(
+                    'plugin' => 'BoostCake',
+                    'class' => 'alert-error'
+                ),
+            ),
+        ),
+    );
+    public $helpers = array(
+        'Session',
+        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+        'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
+    );
+    public $layout = 'bootstrap';
+
+    public function beforeFilter() {
+        $this->set('user', $this->Auth->user());
+    }
+
 }

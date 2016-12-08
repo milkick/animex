@@ -63,3 +63,127 @@ Stack Trace:
 #8 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #9 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2016-12-07 12:03:50 Error: [MissingControllerException] Controller class TestController could not be found.
+Exception Attributes: array (
+  'class' => 'TestController',
+  'plugin' => NULL,
+)
+Request URL: /animex/test
+Stack Trace:
+#0 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-12-07 12:04:11 Error: [MissingActionException] Action UsersController::test() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'test',
+)
+Request URL: /animex/users/test
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-12-07 13:47:09 Error: Fatal Error (4): syntax error, unexpected ''placeholder'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [E:\xampp\htdocs\animex\app\View\Users\login.ctp, line 20]
+2016-12-07 13:47:09 Error: [FatalErrorException] syntax error, unexpected ''placeholder'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /animex/
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'E:\\xampp\\htdocs...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'E:\\xampp\\htdocs...', 20, Array)
+#2 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'E:\\xampp\\htdocs...', 20, Array)
+#3 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-12-07 14:53:29 Error: [InternalErrorException] Flash message missing.
+Request URL: /animex/users/register
+Stack Trace:
+#0 E:\xampp\htdocs\animex\app\Controller\UsersController.php(46): FlashComponent->__call('error', Array)
+#1 E:\xampp\htdocs\animex\app\Controller\UsersController.php(46): FlashComponent->error()
+#2 [internal function]: UsersController->register()
+#3 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#4 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#5 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#6 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2016-12-07 14:56:19 Error: [MissingViewException] View file "Users\create.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users\\create.ctp',
+)
+Request URL: /animex/users/register
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(470): View->_getViewFileName('create')
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(963): View->render('create', NULL)
+#2 E:\xampp\htdocs\animex\app\Controller\UsersController.php(46): Controller->render('create')
+#3 [internal function]: UsersController->register()
+#4 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2016-12-07 14:56:25 Error: [MissingViewException] View file "Users\create.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users\\create.ctp',
+)
+Request URL: /animex/users/register
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(470): View->_getViewFileName('create')
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(963): View->render('create', NULL)
+#2 E:\xampp\htdocs\animex\app\Controller\UsersController.php(46): Controller->render('create')
+#3 [internal function]: UsersController->register()
+#4 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#7 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2016-12-07 15:31:19 Error: [MissingHelperException] Helper class validationErrosHelper could not be found.
+Exception Attributes: array (
+  'class' => 'validationErrosHelper',
+  'plugin' => false,
+)
+Request URL: /animex/users/register
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('validationErros')
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(858): HelperCollection->__isset('validationErros')
+#2 E:\xampp\htdocs\animex\app\View\Users\register.ctp(26): View->__get('validationErros')
+#3 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(971): include('E:\\xampp\\htdocs...')
+#4 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(933): View->_evaluate('E:\\xampp\\htdocs...', Array)
+#5 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(473): View->_render('E:\\xampp\\htdocs...')
+#6 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(963): View->render('register', NULL)
+#7 E:\xampp\htdocs\animex\app\Controller\UsersController.php(47): Controller->render('register')
+#8 [internal function]: UsersController->register()
+#9 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#11 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#12 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2016-12-07 16:25:06 Error: [MissingLayoutException] Layout file "Layouts\main.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Layouts\\main.ctp',
+)
+Request URL: /animex/users/login
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(514): View->_getLayoutFileName('main')
+#1 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\View\View.php(481): View->renderLayout('', 'main')
+#2 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#3 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#4 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#5 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2016-12-07 16:35:03 Error: Fatal Error (1): Call to a member function hash() on null in [E:\xampp\htdocs\animex\app\Controller\UsersController.php, line 60]
+2016-12-07 16:35:03 Error: [FatalErrorException] Call to a member function hash() on null
+Request URL: /animex/users/login
+Stack Trace:
+#0 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Error\ErrorHandler.php(212): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'E:\\xampp\\htdocs...', 60)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'E:\\xampp\\htdocs...', 60, Array)
+#2 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'E:\\xampp\\htdocs...', 60, Array)
+#3 E:\xampp\htdocs\animex\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-12-07 22:40:24 Error: [MissingControllerException] Controller class TestController could not be found.
+Exception Attributes: array (
+  'class' => 'TestController',
+  'plugin' => NULL,
+)
+Request URL: /animex/test
+Stack Trace:
+#0 E:\xampp\htdocs\animex\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

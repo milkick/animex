@@ -1,59 +1,6 @@
-<!-- 
 
-  navbar-inverse : 黒いスタイルに変更
-  navbar-origin : オリジナルスタイルを当ててみると・・・
-
--->
-
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
-  <div class="container-fluid">
-
-    <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-4">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      <!-- タイトルなどのテキスト -->
-      <a class="navbar-brand" href="#">Designup.jp</a>
-
-    </div>
-
-    <!-- グローバルナビの中身 -->
-    <div class="collapse navbar-collapse" id="nav-menu-4">
-      
-      <!-- 各ナビゲーションメニュー -->
-      <ul class="nav navbar-nav">
-
-        <!-- 通常のリンク -->
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-
-        <!-- ドロップダウンのメニューも配置可能 -->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-
-      </ul>
-
-
-    </div>
-  </div>
-</nav>
-<?php echo $this->Form->create('BoostCake', array(
+<?php 
+echo $this->Form->create('User', array(
 	'inputDefaults' => array(
 		'div' => 'form-group',
 		'label' => array(
@@ -62,23 +9,40 @@
 		'wrapInput' => 'col col-md-9',
 		'class' => 'form-control'
 	),
-	'class' => 'well form-horizontal'
+	'class' => 'well form-horizontal',
+    'type' => 'post',
+    'url' => 'login'
 )); ?>
-	<?php echo $this->Form->input('email', array(
-		'placeholder' => 'Email'
+	<?php echo $this->Form->input('User.username', array(
+        'type' => 'text',
+		'placeholder' => 'Email',
+        'label' => 'メールアドレス'
 	)); ?>
-	<?php echo $this->Form->input('password', array(
-		'placeholder' => 'Password'
-	)); ?>
-	<?php echo $this->Form->input('remember', array(
-		'wrapInput' => 'col col-md-9 col-md-offset-3',
-		'label' => 'Remember me',
-		'class' => false
+	<?php echo $this->Form->input('User.password', array(
+        'type' => 'password',
+		'placeholder' => 'Password',
+        'label' => 'パスワード'
 	)); ?>
 	<div class="form-group">
-		<?php echo $this->Form->submit('Sign in', array(
+		<?php echo $this->Form->submit('ログイン', array(
 			'div' => 'col col-md-9 col-md-offset-3',
-			'class' => 'btn btn-default'
+			'class' => 'btn btn-primary',
+            'style' => 'float:left'
 		)); ?>
+<?php 
+echo $this->Html->link(
+        '新規登録する',
+        array(
+            'controller' => 'users',
+            'action' => 'register'
+        ),
+        array(
+            'class' => 'btn btn-success',
+            'style' => 'margin-left:20px'
+        )
+    );
+        
+?>
 	</div>
 <?php echo $this->Form->end(); ?>
+
