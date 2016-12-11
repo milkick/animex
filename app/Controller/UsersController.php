@@ -31,9 +31,14 @@ class UsersController extends AppController {
  * @return void
  */
     public function index() {
-        
+        $this->redirect(array(
+            'controller' => 'comments',
+            'action' => 'index'
+            )
+        );
     }
     
+   
 /**
  * register method
  * @return void
