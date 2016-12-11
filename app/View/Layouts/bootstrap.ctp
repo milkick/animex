@@ -40,7 +40,7 @@
 
 -->
 
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<nav class="navbar navbar-default navbar-inverse" role="navigation" style="margin-bottom:10px">
   <div class="container-fluid">
 
     <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
@@ -65,7 +65,7 @@
       <ul class="nav navbar-nav">
 
         <!-- 通常のリンク -->
-        <li class="active"><a href="#">Link</a></li>
+        <li class="active"><a href="<?php echo "http://" . filter_input(INPUT_SERVER, 'HTTP_HOST') . "/animex/users/logout" ?>">ログアウト</a></li>
         <li><a href="#">Link</a></li>
 
         <!-- ドロップダウンのメニューも配置可能 -->

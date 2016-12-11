@@ -58,7 +58,7 @@ class UsersController extends AppController {
  */
 	public function login() {
         if ($this->request->is('post')) {
-            if ($this->Auth->login($this->request->data)) {
+            if ($this->Auth->login($this->request->data('User'))) {
                 return $this->redirect('index');
             }else{
                 $this->Flash->error('ログイン失敗');
@@ -73,6 +73,7 @@ class UsersController extends AppController {
  */
     public function logout(){
     $this->Auth->logout();
+    $this->Session->destroy();
     $this->redirect('login');
     }
 

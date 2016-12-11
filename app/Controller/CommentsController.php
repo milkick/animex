@@ -27,6 +27,7 @@ class CommentsController extends AppController {
  */
 	public $components = array('Paginator', 'Session', 'Flash', 'Auth');
     public $name = 'Comments';
+    public $uses = array('Comment', 'User');
     
    function beforeFilter() {
     parent::beforeFilter();
@@ -46,11 +47,14 @@ class CommentsController extends AppController {
  */    
     public function add() {
         if ($this->request->is('post')) {
+            $loginUser = $this->Auth->user();
+            $this->request->data['Comment']['user_inc'] = $this->Session->read('user_inc');
             if ($this->Comment->save($this->request->data)) {
                 $this->Flash->success('書き込みました');
-                return $this->redirect('add');
+                return $this->redirect('index');
             }
-            $this->Flash->error('失敗した失敗した失敗した');
+            $this->Flash->error('よくわからないけど失敗した');
+            return $this->redirect('add');
         }
     }
 }

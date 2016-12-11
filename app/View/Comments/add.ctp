@@ -15,8 +15,24 @@ echo $this->Form->create('Comment', array(
 echo $this->Form->input('Comment.comment',
         array(
             'type' => 'text',
-            'placeholder' => 'コメントを入力',
-            'label' => 'コメント'
+            'placeholder' => 'メモを入力',
+            'label' => 'メモ'
         )
     );
-echo $this->Form->end('submit');
+echo $this->Form->button('書き込み',
+        array(
+            'type' => 'submit',
+            'class' => 'btn btn-success'
+        )
+        
+        );
+echo $this->Form->end();
+echo $this->Html->link('戻る', array(
+        'controller' => 'comments',
+        'action' => 'index'
+    ),
+    array(
+        'class' => 'btn btn-default',
+        'style' => 'margin-left:20px'
+    )
+);
