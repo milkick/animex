@@ -1,4 +1,4 @@
-
+<div id="comment_body" style="margin-left:1em">
 <?php
     echo $this->Html->link('メモする', array(
                 'controller' => 'comments',
@@ -6,8 +6,13 @@
             ),
             array(
                 'class' => 'btn btn-primary btn-sm',
-                'style' => 'margin-left:20px'
             )
     );
-    
+    foreach ($pageData as $comment) {
+        echo "<p>" . h($comment['Comment']['comment']) . "</p>";
+    }
+    echo "<div id=\"pagenator_numbers\">";
+    echo $this->Paginator->numbers();
+    echo "</div>";
 ?>
+</div>

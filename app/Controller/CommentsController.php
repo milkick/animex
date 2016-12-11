@@ -29,6 +29,24 @@ class CommentsController extends AppController {
     public $name = 'Comments';
     public $uses = array('Comment', 'User');
     
+ /**
+  * pagenator
+  * 
+  * @var array
+  */
+    public $paginate = array(
+        'limit' => 10
+    );
+    
+  /**
+   * helpers
+   * 
+   * @var array
+   */
+    public $helpers = array(
+        'Paginator'
+    );
+    
    function beforeFilter() {
     parent::beforeFilter();
   }
@@ -38,7 +56,14 @@ class CommentsController extends AppController {
  * @return void
  */
     public function index() {
-        
+    $this->Paginator->settings = array(
+        'conditions' => array('Comment.user_inc' => $this->Session->read('user_inc')),
+        'limit' => 10,
+        'order' => array('Comment.created' => 'desc')
+    );
+    $pageData = $this->Paginator->paginate('Comment');
+    $this->set('pageData', $pageData);
+    
     }
 /**
  * add method

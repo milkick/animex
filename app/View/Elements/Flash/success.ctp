@@ -1,4 +1,4 @@
-<?php echo $this->Html->css('cake.notic.errors.css?123');
+<?php echo $this->Html->css('cake.notic.errors.css?1123');
 echo $this->fetch('css');
 ?>
-<div id="success" class="success"><?php echo $message; ?></div>
+<div id="success" class="flash_message success"><?php echo $message; ?></div>
