@@ -47,8 +47,10 @@ class UsersController extends AppController {
     public function register() {
         if ($this->request->is('post') && $this->User->save($this->request->data)) {
            $this->Auth->login();
-           $this->redirect('index');
+           return $this->redirect('index');
         }
+        $this->Flash->error('登録失敗');
+        return $this->redirect('register');
     }
     
 /**

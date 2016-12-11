@@ -14,25 +14,78 @@ class UsersControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.user'
 	);
-
+/**
+ * Controller setup
+ * 
+ */
+    public function setup() {
+        parent::setUp();
+     
+    }
 /**
  * testIndex method
  *
+ * @test
  * @return void
  */
-	public function testIndex() {
-		$this->markTestIncomplete('testIndex not implemented.');
+	public function インデックスからコメントへ遷移() {
+		$this->testAction("/users/index", array('return' => 'view'));
+        debug($this->headers);
+        $this->assertRegExp("/\/comments$/", $this->headers["Location"]);
 	}
 
 /**
  * testView method
- *
+ *@test
  * @return void
  */
-	public function testView() {
-		$this->markTestIncomplete('testView not implemented.');
-	}
+	public function registerをgetで見るとregisterに戻る() {
+		$this->testAction('/users/register', array(
+            'method' => 'get'
+            ));
+        $this->assertContains('register', $this->headers['Location']);
 
+	}
+    
+/**
+ * testView method
+ *@test
+ * @return void
+ */
+	public function registerで空白でpostを送るとregisterに戻る() {
+		$autoRender = false;
+        $this->testAction('/users/register', array(
+            'method' => 'post',
+            'data' => array(
+                'username' => 'himabito',
+                'password' => 'himabito',
+                'password_confirm' => 'test'
+                )
+            ));
+        debug($this->controller->User->validationErrors);
+        $this->assertNotEmpty($this->controller->User->validationErrors);
+        
+    }
+/**
+ * testView method
+ *@test
+ * @return void
+ */
+	public function registerで正しい値でpostを送ると成功してindexに遷移する() {
+		$autoRender = false;
+        $this->testAction('/users/register', array(
+            'method' => 'post',
+            'data' => array(
+                'username' => 'himabito@hotmail.com',
+                'password' => 'himabito',
+                'password_confirm' => 'himabito'
+                )
+            ));
+        debug($this->controller->User->validationErrors);
+        $this->assertEmpty($this->controller->User->validationErrors);
+        $this->assertTextContains('index', $this->headers['Location']);
+        
+    }
 /**
  * testAdd method
  *

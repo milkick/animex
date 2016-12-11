@@ -15,6 +15,7 @@ echo $this->Form->create('Comment', array(
 echo $this->Form->input('Comment.comment',
         array(
             'type' => 'text',
+            'rows' => '3',
             'placeholder' => 'メモを入力',
             'label' => 'メモ'
         )

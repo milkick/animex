@@ -29,6 +29,24 @@ class CommentsController extends AppController {
     public $name = 'Comments';
     public $uses = array('Comment', 'User');
     
+ /**
+  * pagenator
+  * 
+  * @var array
+  */
+    public $paginate = array(
+        'limit' => 10
+    );
+    
+  /**
+   * helpers
+   * 
+   * @var array
+   */
+    public $helpers = array(
+        'Paginator'
+    );
+    
    function beforeFilter() {
     parent::beforeFilter();
   }
@@ -38,7 +56,14 @@ class CommentsController extends AppController {
  * @return void
  */
     public function index() {
-        
+    $this->Paginator->settings = array(
+        'conditions' => array('Comment.user_inc' => $this->Session->read('user_inc')),
+        'limit' => 10,
+        'order' => array('Comment.created' => 'desc')
+    );
+    $pageData = $this->Paginator->paginate('Comment');
+    $this->set('pageData', $pageData);
+    
     }
 /**
  * add method
@@ -55,6 +80,33 @@ class CommentsController extends AppController {
             }
             $this->Flash->error('よくわからないけど失敗した');
             return $this->redirect('add');
+        }
+    }
+/**
+ * delete method
+ * 
+ * @return void
+ */    
+    public function delete() {
+        if ($this->request->is('post')) {
+            $id = $this->request->data('id');
+        $exists = $this->Comment->find('first',
+                array(
+                    'conditions' => array(
+                        'Comment.id' => $id,
+                        'Comment.user_inc' => $this->Session->read('user_inc')
+                    )                    
+                )
+            );
+        if ($exists) {
+            if ($this->Comment->delete($id)) {
+                $this->Flash->error('削除しました');
+                return $this->redirect('index');
+            } 
+        }
+        $this->Flash->error('不正な処理です');
+        return $this->redirect('index');
+            
         }
     }
 }

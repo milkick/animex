@@ -12,6 +12,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">  
+        <?php echo $this->Html->css('cake.myrule.css?1233');
+        echo $this->fetch('css');        
+        ?>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>  
 
         <!-- Le styles -->
