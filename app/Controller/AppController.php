@@ -52,6 +52,9 @@ class AppController extends Controller {
     public function beforeFilter() {
         $uses = array('User');
         $this->set('user', $this->Auth->user());
+        if ($this->User === NULL) {
+            throw new Exception('Error');
+        }
         if ($this->Auth->user()) {
             $userArr = $this->Auth->user();
             $userInc = $this->User->find('first', array(

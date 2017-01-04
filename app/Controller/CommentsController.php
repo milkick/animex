@@ -61,8 +61,14 @@ class CommentsController extends AppController {
         'limit' => 10,
         'order' => array('Comment.created' => 'desc')
     );
-    $pageData = $this->Paginator->paginate('Comment');
-    $this->set('pageData', $pageData);
+    try {
+        $pageData = $this->Paginator->paginate('Comment');
+        $this->set('pageData', $pageData);
+    } catch (Exception $e){
+        throw new NotFoundException('Page Not Found');
+        exit;
+    }
+        
     
     }
 /**

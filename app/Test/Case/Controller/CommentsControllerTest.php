@@ -1,4 +1,5 @@
 <?php
+
 App::uses('CommentsController', 'Controller');
 
 /**
@@ -6,41 +7,68 @@ App::uses('CommentsController', 'Controller');
  */
 class CommentsControllerTest extends ControllerTestCase {
 
-/**
- * Fixtures
- *
- * @var array
- */
-	public $fixtures = array(
-		'app.comment',
-		'app.user'
-	);
+    /**
+     * Fixtures
+     *
+     * @var array
+     */
+    public $fixtures = array(
+        'app.user',
+        'app.comment'
+    );
 
-/**
- * testIndex method
- *
- * @return void
- */
-	public function testIndex() {
-		$this->markTestIncomplete('testIndex not implemented.');
-	}
+    /**
+     * setUp
+     * 
+     * @var array
+     */
+    public function setUp() {
+        parent::setUp();
+        $this->controller = $this->generate('Comments', array(
+            'components' => array(
+                'Session',
+                'Auth',
+                'RequestHandler',
+                'Paginator'
+            ),
+            'models' => array(
+                'Comment',
+                'User'
+            ),
+            'methods' => array(
+                'User',
+                'Comment'
+            )
+        ));
+    }
 
-/**
- * testAdd method
- *
- * @return void
- */
-	public function testAdd() {
-		$this->markTestIncomplete('testAdd not implemented.');
-	}
+    /**
+     * testIndex method
+     * @test
+     * @expectedException NotFoundException
+     * @return void
+     */
+    public function 存在しないページを開くとNotFound() {
+        $this->testAction('/comment/index/page:666');
+        debug($this->controller->Comment);
+    }
 
-/**
- * testDelete method
- *
- * @return void
- */
-	public function testDelete() {
-		$this->markTestIncomplete('testDelete not implemented.');
-	}
+    /**
+     * testAdd method
+     *
+     * @return void
+     */
+    public function testAdd() {
+        $this->markTestIncomplete('testAdd not implemented.');
+    }
+
+    /**
+     * testDelete method
+     *
+     * @return void
+     */
+    public function testDelete() {
+        $this->markTestIncomplete('testDelete not implemented.');
+    }
 
 }
