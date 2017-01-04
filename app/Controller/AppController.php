@@ -12,6 +12,7 @@
  */
 App::uses('Controller', 'Controller');
 App::uses('AuthComponent', 'Controller/Component');
+App::uses('User', 'Model');
 
 /**
  * Application Controller
@@ -23,7 +24,8 @@ App::uses('AuthComponent', 'Controller/Component');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-
+    
+    
     public $components = array(
         'Session',
         'Cookie',
@@ -48,7 +50,23 @@ class AppController extends Controller {
     public $layout = 'bootstrap';
 
     public function beforeFilter() {
+        $uses = array('User');
         $this->set('user', $this->Auth->user());
+        if ($this->User === NULL) {
+            throw new Exception('Error');
+        }
+        if ($this->Auth->user()) {
+            $userArr = $this->Auth->user();
+            $userInc = $this->User->find('first', array(
+                        'conditions' => array(
+                            'User.username' => $userArr['username']
+                        ),
+                        'fields' => array(
+                            'User.inc'
+                        )
+                    ));
+            $this->Session->write('user_inc', $userInc['User']['inc']);
+        }
     }
 
 }

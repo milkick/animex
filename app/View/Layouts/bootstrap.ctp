@@ -12,6 +12,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">  
+        <?php echo $this->Html->css('cake.myrule.css?1233');
+        echo $this->fetch('css');        
+        ?>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>  
 
         <!-- Le styles -->
@@ -40,7 +43,7 @@
 
 -->
 
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<nav class="navbar navbar-default navbar-inverse" role="navigation" style="margin-bottom:10px">
   <div class="container-fluid">
 
     <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
@@ -65,7 +68,7 @@
       <ul class="nav navbar-nav">
 
         <!-- 通常のリンク -->
-        <li class="active"><a href="#">Link</a></li>
+        <li class="active"><a href="<?php echo "http://" . filter_input(INPUT_SERVER, 'HTTP_HOST') . "/animex/users/logout" ?>">ログアウト</a></li>
         <li><a href="#">Link</a></li>
 
         <!-- ドロップダウンのメニューも配置可能 -->
